@@ -11,7 +11,7 @@
 
 //VARIABLES
     var bot = new Discord.Client();
-    var prefix = ("-")
+    var prefix = ("*")
 
 
 //CONNECTION DU BOT
