@@ -23,7 +23,7 @@
     });
 
 //TOKEN DU BOT
-    bot.login("Mzg0ODA1MTQzMTA5MDQyMTc2.DTls4w.fwACW-Eplwq9Nt_af-42KKdgcvA");
+    bot.login(process.env.TOKEN);
 
 //NPM MUSIQUE
     music(bot, {prefix: "*"}, {anyoneCanSkip: (true)});
