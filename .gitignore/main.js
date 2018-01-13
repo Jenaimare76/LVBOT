@@ -465,12 +465,12 @@
                     file: "https://media.giphy.com/media/l41lZyILJyluNm8gw/giphy.gif"
                 });
             }
-        //COMMANDE DE L'IMAGE ""
+        //COMMANDE DE L'IMAGE "MEN"
             if (message.content === prefix + "men"){
 
                 message.delete();
                 message.channel.send({
-                    file: "https://giphy.com/gifs/men-gXch6VhLYZAA"
+                    file: "https://media.giphy.com/media/gXch6VhLYZAA/giphy.gif"
                 });
             }
 //FONCTION
