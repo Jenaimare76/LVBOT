@@ -409,6 +409,20 @@
             })
             .catch(err => console.log(err));  
         }
+       //COMMANDE DU SON "NANI"
+        if (message.content === prefix +  "oui") {
+
+            message.delete();
+            if (message.member.voiceChannel === undefined) return message.reply(wrap("Vous n\'êtes pas dans un channel vocal !"));
+            voiceChannel.join().then(connection =>{
+                const dispatcher = connection.playFile('./Audio/OUI.mp3');
+                dispatcher.on("end", end => {
+                    voiceChannel.leave();
+                });
+            })
+            .catch(err => console.log(err));  
+        }
+
 //COMMANDE POUR FICHIER GIF
         //COMMANDE DE L'IMAGE "BLOP"
            if (message.content === prefix + "blop"){
