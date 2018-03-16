@@ -437,6 +437,15 @@
         }
 
 //COMMANDE POUR FICHIER GIF
+        //COMMANDE DE L'IMAGE "TEST"
+           if (message.content === prefix + "test"){
+
+                message.delete();
+                message.channel.send({
+                    file: "https://media.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif"
+                });
+            }
+        
         //COMMANDE DE L'IMAGE "BLOP"
            if (message.content === prefix + "blop"){
 
