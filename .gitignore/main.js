@@ -524,7 +524,7 @@
 
                 message.delete();
                 message.channel.send({
-                    file: "https://media1.tenor.com/images/2b1f9c80aed389699cbdaf6855433dbf/tenor.gif?itemid=5506237"
+                    file: "https://media1.tenor.com/images/2b1f9c80aed389699cbdaf6855433dbf/tenor.gif"
                 });
             }
         //COMMANDE DE L'IMAGE "MEN"
