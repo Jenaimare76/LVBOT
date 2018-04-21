@@ -257,7 +257,7 @@
         
         
         if (gif.length < 1) return message.channel.send("Veuillez inserez un theme: " + "`" + config.prefix + "g [theme]`")
-        const res = await got("http://api.giphy.com/v1/gifs/random?api_key=" + config.giphy_key + "&tag=" + encodeURIComponent(gif.join(" ")), {json: true})
+        const res = await got("http://api.giphy.com/v1/gifs/random?api_key=" + process.env.Gif + "&tag=" + encodeURIComponent(gif.join(" ")), {json: true})
         if (!res || !res.body || !res.body.data.image_url) return message.channel.send("Impossible de trouver un Gif correspondant.")
         
         const GifEmbed = new Discord.RichEmbed()
