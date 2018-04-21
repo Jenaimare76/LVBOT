@@ -14,10 +14,10 @@
     const got = require("got");
     const YouTube = require('simple-youtube-api');
     const ytdl = require('ytdl-core');
-    const youtube = new YouTube(config.youtube_key);
+    const youtube = new YouTube(process.env.YT);
     const queue = new Map();
     const bot = new Client({ disableEveryone: true });
-    const giphy = require('giphy-api')(config.giphy_key);
+    const giphy = require('giphy-api')(process.env.Gif);
     const moment = require('moment');
     require('moment-duration-format');
 
@@ -31,7 +31,7 @@
     });
     
 //TOKEN DU BOT
-    bot.login(config.token);
+    bot.login(process.env.TOKEN);
     
 //MESSAGE COMMANDE
     bot.on('message', async message => {
