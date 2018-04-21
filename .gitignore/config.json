@@ -1,0 +1,7 @@
+{
+    "token": "process.env.TOKEN",
+    "giphy_key": "aFmoih7OLEFH3xQqs6SlRYLxxmcgITxx",
+    "youtube_key": "AIzaSyCNUlxykWV_9hmZZjpDj9kWWVyFSLCieXE",
+    "adminGuild1": "Purge",
+    "prefix": "-"
+}
