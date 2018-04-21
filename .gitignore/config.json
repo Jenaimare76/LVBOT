@@ -3,5 +3,5 @@
     "giphy_key": "process.env.YT",
     "youtube_key": "process.env.Gif",
     "adminGuild1": "Purge",
-    "prefix": "-"
+    "prefix": "*"
 }
