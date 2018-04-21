@@ -6,6 +6,9 @@
     const config = require("./config.json");
     const request = require("superagent");
     const test = require("./Cmds/test.js");
+    const help = require("./Cmds/help.js");
+    const sb = require("./Cmds/sb.js");
+    const mb = require("./Cmds/mb.js");
     const piece = require("./Cmds/piece.js");
     const blague = require("./Cmds/blague.js");
     const got = require("got");
@@ -315,139 +318,17 @@
 //COMMANDES POUR AFFICHER LA LISTE DES COMMANDES
     //COMMANDE HELP
         if (command ==="help"){
-            
-            var help_embed = new Discord.RichEmbed()
-                .setColor("#A50000")
-
-                .addField(":page_facing_up:  **__Liste des commandes__** :page_facing_up: ",
-                "\n`" + config.prefix + "help` *pour avoir la liste des commandes.*" +
-                "\n`" + config.prefix + "sb` *pour voir la SoundBox*" +
-                "\n`" + config.prefix + "mb` *pour avoir la liste de meme* " +
-                "\n "
-                )
-
-                .addBlankField()
-
-                .addField(":wrench: **__Administration__** :wrench:",
-                "\n`" + config.prefix + "purge [2-100]` *pour supprimer un certain nombre de messages*" +
-                "\n "
-                )
-
-                .addBlankField()
-
-                .addField("🎶 **__Musique__** 🎶", 
-                "\n`" + config.prefix + "play [lien, nom]` *pour avoir de la musique*" +
-                "\n`" + config.prefix + "stop` *pour stopper toutes les musiques.*" +
-                "\n`" + config.prefix + "skip ` *passe à la musique suivante.*" +
-                "\n`" + config.prefix + "np` *pour afficher la musique actuellement jouée*" +
-                "\n`" + config.prefix + "queue` *afficher la playlist actuelle*" +
-                "\n`" + config.prefix + "Pause` *mettre en pause la musique.*" +
-                "\n`" + config.prefix + "Resume` *arreter la pause.*" +
-                "\n`" + config.prefix + "Volume [1-5]` *modfier le volume (default: 2).*" +
-                "\n "
-                )
-
-                .addBlankField()
-
-                .addField(":question: **__Divers__** :question: ",
-                "\n`" + config.prefix + "opggl [Pseudo]` *pour voir un profil opgg League Of Legends.*" +
-                "\n`" + config.prefix + "opggo [Pseudo]` *pour voir un profil opgg Overwatch.*" +
-                "\n`" + config.prefix + "opggp [Pseudo]` *pour voir un profil opgg PUBG.*" +
-                "\n`" + config.prefix + "g [Theme]` *pour envoyer un gif random à partir d'un thème*." +
-                "\n`" + config.prefix + "blague` *à vos risque et péril*." +
-                "\n`" + config.prefix + "piece` *pour faire un pile ou face.*" +
-                "\n`" + config.prefix + "de` *pour faire un lancé de dé de 6.*" +
-                "\n`" + config.prefix + "server` *pour avoir des informations sur le serveur*." +
-                "\n`" + config.prefix + "bot` *pour avoir des informations sur le bot*." +
-                "\n`" + config.prefix + "?` *pour tester l'activité du bot*." +
-                "\n "
-                )
-
-                .addBlankField()
-
-                .setFooter("[WIP]")
-
-            message.delete();
-            message.author.createDM().then(channel => {
-                channel.send(help_embed);
-            });
-
-            console.log("Help demandé")
-
+            return help.action(message)
         }
 
     //COMMANDE SOUNDBOX
         if (command ==="sb"){
-            var sb_embed = new Discord.RichEmbed()
-                .setColor("#C600D4")
-
-                .addField(":loud_sound: **__SoundBox__** :loud_sound: ", 
-                "\n`" + config.prefix + "nani`" + 
-                "\n`" + config.prefix + "owms`" + 
-                "\n`" + config.prefix + "ndy`" + 
-                "\n`" + config.prefix + "omg`" + 
-                "\n`" + config.prefix + "xploff`" + 
-                "\n`" + config.prefix + "xplon`" + 
-                "\n`" + config.prefix + "xpshut`" + 
-                "\n`" + config.prefix + "xpstart`" + 
-                "\n`" + config.prefix + "pog`" + 
-                "\n`" + config.prefix + "ch`" + 
-                "\n`" + config.prefix + "swag`" + 
-                "\n`" + config.prefix + "cc`" + 
-                "\n`" + config.prefix + "gtamp`" + 
-                "\n`" + config.prefix + "tbc`" + 
-                "\n`" + config.prefix + "btch`" + 
-                "\n`" + config.prefix + "deus`" + 
-                "\n`" + config.prefix + "gcube`" + 
-                "\n`" + config.prefix + "ora`" + 
-                "\n`" + config.prefix + "pbar`" + 
-                "\n`" + config.prefix + "ps`" + 
-                "\n`" + config.prefix + "tw`" + 
-                "\n`" + config.prefix + "nig`" + 
-                "\n`" + config.prefix + "jmv`" + 
-                "\n`" + config.prefix + "col`" + 
-                "\n`" + config.prefix + "bz`" + 
-                "\n`" + config.prefix + "oui`" + 
-                "\n`" + config.prefix + "osk`" + 
-                "\n"
-                )
-
-                .setFooter("[WIP]")
-
-            message.delete();
-            message.author.createDM().then(channel => {
-                channel.send(sb_embed);
-            });
-            console.log("SoundBox demandé")
+            return sb.action(message)
         }
 
     //COMMANDE MEMEBOX
         if (command ==="mb"){
-            var meme_sembed = new Discord.RichEmbed()
-                .setColor("#FEFE00")
-
-                .addField(":space_invader:  **__MemeBox__** :space_invader: ", 
-                "\n`" + config.prefix + "blop`" + 
-                "\n`" + config.prefix + "salt`" + 
-                "\n`" + config.prefix + "scuse`" + 
-                "\n`" + config.prefix + "knife`" + 
-                "\n`" + config.prefix + "pot`" + 
-                "\n`" + config.prefix + "blbl`" + 
-                "\n`" + config.prefix + "phot`" + 
-                "\n`" + config.prefix + "pol`" + 
-                "\n`" + config.prefix + "view`" + 
-                "\n`" + config.prefix + "men`" + 
-                "\n`" + config.prefix + "bear`" + 
-                "\n"
-                )
-
-                .setFooter("[WIP]")
-
-            message.delete();
-            message.author.createDM().then(channel => {
-                channel.send(meme_sembed);
-            });
-            console.log("MemeBox demandé")
+            return mb.action(message)
         }
 
 
